@@ -11,7 +11,7 @@
 ## 安装
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/x-fetcher.git
+git clone https://github.com/Jane-xiaoer/x-fetcher.git
 cd x-fetcher
 pip install requests
 ```
