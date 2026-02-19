@@ -19,31 +19,61 @@ pip install requests
 ## 使用
 
 ```bash
-python fetch_x.py <x_url> [--save-md]
+python fetch_x.py <x_url> [选项]
 ```
+
+### 选项
+
+| 选项 | 说明 |
+|------|------|
+| `--save-md` | 直接保存主贴为 Markdown |
+| `--with-replies` | 同时抓取评论 |
+| `--full` | 保存完整归档（主贴+评论） |
+| `--json` | 仅输出 JSON，不保存文件 |
 
 ### 示例
 
 ```bash
-# 抓取普通推文
+# 交互模式（推荐）- 会询问你要保存哪些内容
 python fetch_x.py "https://x.com/elonmusk/status/123456789"
 
 # 抓取 X Article 长文章
 python fetch_x.py "https://x.com/thedankoe/status/2010751592346030461"
 
-# 抓取并直接保存为 Markdown 文件
+# 直接保存主贴为 Markdown
 python fetch_x.py "https://x.com/elonmusk/status/123456789" --save-md
+
+# 保存完整归档（主贴 + 评论）
+python fetch_x.py "https://x.com/elonmusk/status/123456789" --full
+
+# 仅输出 JSON（包含评论）
+python fetch_x.py "https://x.com/elonmusk/status/123456789" --json --with-replies
 ```
 
-### 保存为 Markdown
+### 交互模式
 
-抓取成功后，程序会询问是否保存为 Markdown 文件：
-- 输入 `y` 或 `yes` 保存
-- 输入 `n` 或 `no` 跳过
+不带参数运行时，抓取成功后会显示菜单让你选择：
 
-也可以使用 `--save-md` 参数直接保存，无需交互确认。
+```
+📋 抓取成功！请选择要保存的内容：
+==================================================
 
-生成的文件名格式：`{用户名}_{推文ID}_{时间戳}.md`
+  [1] 仅保存主贴内容
+  [2] 仅保存评论/回复
+  [3] 保存主贴 + 评论（完整归档）
+  [4] 仅输出 JSON（不保存文件）
+  [0] 退出
+
+请输入选项 (0-4):
+```
+
+### 生成的文件
+
+文件名格式：`{用户名}_{推文ID}_{类型}_{时间戳}.md`
+
+- `_post_` - 仅主贴
+- `_replies_` - 仅评论
+- `_full_` - 完整归档
 
 ## 输出格式
 
