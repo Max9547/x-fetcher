@@ -1,145 +1,99 @@
-# X Fetcher
+# 🌟 x-fetcher - Easily Grab Content from X
 
-抓取 X (Twitter) 帖子内容的命令行工具。支持普通推文和 X Article 长文章。
+[![Download x-fetcher](https://img.shields.io/badge/Download_x--fetcher-FF5733?style=flat-square&logo=github)](https://github.com/Jane-xiaoer/x-fetcher)
 
-## 功能
+## 📦 Overview
 
-- 抓取普通推文（文字、图片、视频链接）
-- 抓取 X Article 长文章（完整正文，Markdown 格式）
-- 获取互动数据（点赞、转发、浏览量、书签数）
+x-fetcher is a command-line tool for fetching content from X (Twitter). It supports retrieving ordinary tweets, images, videos, and X Articles (long-form content). The tool also collects interaction data such as likes, retweets, views, and bookmarks.
 
-## 安装
+## 🔍 Features
+
+- Fetch regular tweets (text, images, video links)
+- Retrieve X Article long-form posts (full text in Markdown format)
+- Get engagement data (likes, retweets, views, bookmarks)
+
+## 🚀 Getting Started
+
+You can easily download and run x-fetcher. Follow these steps:
+
+1. **Download the repository**
+
+   Visit the link to download: [Download x-fetcher](https://github.com/Jane-xiaoer/x-fetcher)
+
+2. **Clone the repository**
+
+   Open your command line interface and run the following commands:
+
+   ```bash
+   git clone https://github.com/Jane-xiaoer/x-fetcher.git
+   cd x-fetcher
+   pip install requests
+   ```
+
+## 🛠️ Usage
+
+To use x-fetcher, you will run a command from your terminal. The basic command format is:
 
 ```bash
-git clone https://github.com/Jane-xiaoer/x-fetcher.git
-cd x-fetcher
-pip install requests
+python fetch_x.py <x_url> [options]
 ```
 
-## 使用
+### 🔧 Options
+
+| Option             | Description                           |
+|--------------------|---------------------------------------|
+| `--save-md`        | Save the main post as Markdown        |
+| `--with-replies`   | Fetch comments along with the post    |
+| `--full`           | Save a complete archive (post + replies) |
+| `--json`           | Output only in JSON format, no file saved |
+
+### 📖 Examples
+
+Here are some examples of how to use x-fetcher:
 
 ```bash
-python fetch_x.py <x_url> [选项]
-```
-
-### 选项
-
-| 选项 | 说明 |
-|------|------|
-| `--save-md` | 直接保存主贴为 Markdown |
-| `--with-replies` | 同时抓取评论 |
-| `--full` | 保存完整归档（主贴+评论） |
-| `--json` | 仅输出 JSON，不保存文件 |
-
-### 示例
-
-```bash
-# 交互模式（推荐）- 会询问你要保存哪些内容
+# Interactive mode (recommended) - Asks which content to save
 python fetch_x.py "https://x.com/elonmusk/status/123456789"
 
-# 抓取 X Article 长文章
+# Fetch a long X Article
 python fetch_x.py "https://x.com/thedankoe/status/2010751592346030461"
 
-# 直接保存主贴为 Markdown
+# Save the main post as Markdown
 python fetch_x.py "https://x.com/elonmusk/status/123456789" --save-md
 
-# 保存完整归档（主贴 + 评论）
+# Save a complete archive (main post + comments)
 python fetch_x.py "https://x.com/elonmusk/status/123456789" --full
 
-# 仅输出 JSON（包含评论）
+# Output only JSON (with comments)
 python fetch_x.py "https://x.com/elonmusk/status/123456789" --json --with-replies
 ```
 
-### 交互模式
+### 🎨 Interactive Mode
 
-不带参数运行时，抓取成功后会显示菜单让你选择：
+If you run the script without options, it will show a menu allowing you to choose what to save:
 
 ```
-📋 抓取成功！请选择要保存的内容：
-==================================================
-
-  [1] 仅保存主贴内容
-  [2] 仅保存评论/回复
-  [3] 保存主贴 + 评论（完整归档）
-  [4] 仅输出 JSON（不保存文件）
-  [0] 退出
-
-请输入选项 (0-4):
+📋 Fetch successful! Please select what to save:
+=====================
+- Topics: "not provided"
+- Primary Download Link: "https://github.com/Jane-xiaoer/x-fetcher"
 ```
 
-### 生成的文件
+## 🖥️ System Requirements
 
-文件名格式：`{用户名}_{推文ID}_{类型}_{时间戳}.md`
+x-fetcher works on most systems. You need:
 
-- `_post_` - 仅主贴
-- `_replies_` - 仅评论
-- `_full_` - 完整归档
+- Python 3.x installed on your machine
+- Access to the command line interface (Terminal or CMD)
 
-## 输出格式
+## 📂 Support and Contributions
 
-### 普通推文
+If you encounter issues, please create an issue in the GitHub repository. Your feedback is valuable. Contributions through pull requests are welcomed.
 
-```json
-{
-  "source": "fxtwitter",
-  "success": true,
-  "type": "tweet",
-  "content": {
-    "text": "推文内容...",
-    "author": "作者名",
-    "username": "用户名",
-    "created_at": "发布时间",
-    "likes": 1234,
-    "retweets": 567,
-    "views": 89000,
-    "media": ["图片/视频URL"],
-    "replies": 123
-  }
-}
-```
+## 📧 Contact
 
-### X Article 长文章
+For questions, please reach out through the repository's issue page or connect via X (Twitter).
 
-```json
-{
-  "source": "fxtwitter",
-  "success": true,
-  "type": "article",
-  "content": {
-    "title": "文章标题",
-    "preview": "文章预览...",
-    "full_text": "完整文章内容（Markdown格式）...",
-    "cover_image": "封面图URL",
-    "author": "作者名",
-    "username": "用户名",
-    "created_at": "创建时间",
-    "modified_at": "修改时间",
-    "likes": 206351,
-    "retweets": 28631,
-    "views": 115555283,
-    "bookmarks": 571495
-  }
-}
-```
+## 📜 License
 
-## 支持的 URL 格式
-
-- `https://x.com/username/status/123456789`
-- `https://twitter.com/username/status/123456789`
-
-## 工作原理
-
-1. 从 URL 提取 tweet ID
-2. 尝试 fxtwitter API（支持 Article）
-3. 备选 syndication API
-4. 解析并格式化输出
-
-## 限制
-
-- 依赖第三方 API（fxtwitter），可能因服务变更而失效
-- 私密账号的内容无法抓取
-- 部分媒体内容可能无法获取完整 URL
-
-## License
-
-MIT
+x-fetcher is open-source and available under the MIT License. Feel free to use, modify, and share the software as per the licensing terms.
